@@ -1,0 +1,12 @@
+services:
+  web2lectures:
+    image: postgis/postgis:15-3.4-alpine
+    ports:
+      # HOST:CONTAINER
+      - "6543:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./create-database-users.sql:/docker-entrypoint-initdb.d/create-database-users.sql
+      - ./create-database-sales.sql:/docker-entrypoint-initdb.d/create-database-sales.sql

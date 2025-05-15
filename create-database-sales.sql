@@ -1,0 +1,1 @@
+CREATE DATABASE ticket_sales;
