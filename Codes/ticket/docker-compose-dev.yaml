@@ -1,0 +1,12 @@
+# version: '3' -> obsoleto
+services:
+  pgsql-ticket:
+    image: postgres:16-alpine
+    ports:
+      # HOST:CONTAINER
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=pgsql-ticker-master
+      - POSTGRES_PASSWORD=pgsql-ticker-password  
+    volumes:
+      - ./01-create-database-users.sql:/docker-entrypoint-initdb.d/01-create-database-users.sql
