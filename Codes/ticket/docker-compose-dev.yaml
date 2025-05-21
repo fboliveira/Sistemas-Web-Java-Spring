@@ -6,7 +6,15 @@ services:
       # HOST:CONTAINER
       - "5432:5432"
     environment:
-      - POSTGRES_USER=pgsql-ticker-master
-      - POSTGRES_PASSWORD=pgsql-ticker-password  
+      - POSTGRES_USER=pgsql-ticket-master
+      - POSTGRES_PASSWORD=pgsql-ticket-password  
     volumes:
       - ./01-create-database-users.sql:/docker-entrypoint-initdb.d/01-create-database-users.sql
+  pgadmin:
+    image: dpage/pgadmin4:9.3.0
+    ports:
+      - "8123:80"
+      - "8443:443"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=web@ufop.edu.br
+      - PGADMIN_DEFAULT_PASSWORD=123456
