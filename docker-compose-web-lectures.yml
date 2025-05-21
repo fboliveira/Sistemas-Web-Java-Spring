@@ -1,6 +1,6 @@
 services:
   web2lectures:
-    image: postgis/postgis:15-3.4-alpine
+    image: postgres:16-alpine
     ports:
       # HOST:CONTAINER
       - "6543:5432"
@@ -10,3 +10,11 @@ services:
     volumes:
       - ./create-database-users.sql:/docker-entrypoint-initdb.d/create-database-users.sql
       - ./create-database-sales.sql:/docker-entrypoint-initdb.d/create-database-sales.sql
+  pgadmin-lectures:
+    image: dpage/pgadmin4:9.3.0
+    ports:
+      - "8123:80"
+      - "8443:443"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=web@ufop.edu.br
+      - PGADMIN_DEFAULT_PASSWORD=123456
