@@ -10,6 +10,9 @@ services:
     volumes:
       - ./create-database-users.sql:/docker-entrypoint-initdb.d/create-database-users.sql
       - ./create-database-sales.sql:/docker-entrypoint-initdb.d/create-database-sales.sql
+    networks:
+      - backend
+
   pgadmin-lectures:
     image: dpage/pgadmin4:9.3.0
     ports:
@@ -18,3 +21,9 @@ services:
     environment:
       - PGADMIN_DEFAULT_EMAIL=web@ufop.edu.br
       - PGADMIN_DEFAULT_PASSWORD=123456
+    networks:
+      - backend
+
+networks:
+  frontend:
+  backend:
