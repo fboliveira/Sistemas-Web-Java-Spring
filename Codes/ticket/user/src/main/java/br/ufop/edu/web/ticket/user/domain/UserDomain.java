@@ -3,6 +3,7 @@ package br.ufop.edu.web.ticket.user.domain;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -21,6 +22,7 @@ public class UserDomain {
 
     // ...
 
+    @Setter(AccessLevel.NONE)
     private String creditCardNumber;
 
     private String email;
