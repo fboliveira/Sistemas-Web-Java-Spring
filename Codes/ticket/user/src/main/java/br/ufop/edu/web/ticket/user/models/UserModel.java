@@ -37,6 +37,8 @@ public class UserModel {
     private String email;
     private String password;
 
+    private String city;    
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
