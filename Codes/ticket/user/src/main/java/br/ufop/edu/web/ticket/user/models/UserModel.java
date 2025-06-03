@@ -3,6 +3,7 @@ package br.ufop.edu.web.ticket.user.models;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -37,6 +38,7 @@ public class UserModel {
     private String email;
     private String password;
 
+    @Column(nullable = true)
     private String city;    
 
     private LocalDateTime createdAt;
