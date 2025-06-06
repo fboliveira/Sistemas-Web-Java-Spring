@@ -9,6 +9,9 @@ import br.ufop.edu.web.ticket.user.service.UserService;
 import lombok.AllArgsConstructor;
 
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @RestController
@@ -27,6 +30,14 @@ public class UserController {
     public String getUsers() {
         return new String();
     }
+
+    @PostMapping
+    public ResponseEntity createUser(@RequestBody String entity) {
+        
+        
+        return null;
+    }
+    
     
 
 }
