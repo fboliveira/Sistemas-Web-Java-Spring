@@ -15,8 +15,31 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "name": "Maria Fernanda",
+    "name": "Hugo",
     "creditCardNumber": "123456789",
-    "email": "mariafernanda@web.ufop.edu.br",
+    "email": "hugo@web.ufop.edu.br",
     "password": "123456"
+}
+
+###
+PUT http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "id": "02c95281-bfa8-4859-93dc-1508ed511901",
+    "name": "Hugo Oliveira",
+    "creditCardNumber": "987654321",
+    v
+}
+
+###
+PUT http://localhost:3000/users/password
+Content-Type: application/json
+
+{
+    "id": "02c95281-bfa8-4859-93dc-1508ed511901",
+    "email": "hugo@web.ufop.edu.br",
+    "oldPassword": "123456",
+    "newPassword": "654321"
+
 }

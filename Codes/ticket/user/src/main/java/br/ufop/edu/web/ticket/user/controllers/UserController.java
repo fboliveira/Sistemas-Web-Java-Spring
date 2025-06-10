@@ -6,12 +6,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.ufop.edu.web.ticket.user.dtos.CreateUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.SimpleUserRecordDTO;
+import br.ufop.edu.web.ticket.user.dtos.UpdateUserDTO;
+import br.ufop.edu.web.ticket.user.dtos.UpdateUserPasswordDTO;
 import br.ufop.edu.web.ticket.user.service.UserService;
 import lombok.AllArgsConstructor;
 
@@ -68,5 +71,32 @@ public class UserController {
         return ResponseEntity.ok(list);
 
     }
+
+    @PutMapping
+    public ResponseEntity<SimpleUserRecordDTO> updateUser(@RequestBody UpdateUserDTO updateUserDTO) {
+
+        SimpleUserRecordDTO simpleUserRecordDTO = userService.updateUser(updateUserDTO);
+
+        if (simpleUserRecordDTO == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(simpleUserRecordDTO);
+
+    }
+
+    @PutMapping("/password")
+    public ResponseEntity<SimpleUserRecordDTO> updateUserPassword(@RequestBody  UpdateUserPasswordDTO updateUserPasswordDTO) {
+
+        SimpleUserRecordDTO simpleUserRecordDTO = userService.updateUserPassword(updateUserPasswordDTO);
+
+        if (simpleUserRecordDTO == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(simpleUserRecordDTO);
+
+    }
+
 
 }

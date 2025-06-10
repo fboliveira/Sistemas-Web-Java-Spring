@@ -10,8 +10,11 @@ import org.springframework.stereotype.Service;
 import br.ufop.edu.web.ticket.user.converter.UserConverter;
 import br.ufop.edu.web.ticket.user.domain.UserDomain;
 import br.ufop.edu.web.ticket.user.domain.usecase.CreateUserUseCase;
+import br.ufop.edu.web.ticket.user.domain.usecase.UpdateUserPasswordUseCase;
 import br.ufop.edu.web.ticket.user.dtos.CreateUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.SimpleUserRecordDTO;
+import br.ufop.edu.web.ticket.user.dtos.UpdateUserDTO;
+import br.ufop.edu.web.ticket.user.dtos.UpdateUserPasswordDTO;
 import br.ufop.edu.web.ticket.user.models.UserModel;
 import br.ufop.edu.web.ticket.user.repositories.IUserRepository;
 import lombok.AllArgsConstructor;
@@ -72,6 +75,47 @@ public class UserService {
             .map(UserConverter::toSimpleUserRecordDTO)
             .toList();
 
+
+    }
+
+    public SimpleUserRecordDTO updateUser(UpdateUserDTO updateUserDTO) {
+
+        // Converter para uma entidade do domínio
+        UserDomain userDomain = UserConverter.toUserDomain(updateUserDTO);
+
+        // Validar conforme as usecases
+        
+
+        // Recuperar a entidade atual do banco de dados
+        // Verificar se o ID existe
+        Optional<UserModel> optionalUserModel = userRepository.findById(updateUserDTO.getId());
+
+        if (optionalUserModel.isEmpty()) {
+            return null;
+        }
+
+        UserModel userModel = UserConverter.toUserModel(userDomain);
+
+        return UserConverter.toSimpleUserRecordDTO(userRepository.save(userModel));
+
+    }
+
+    public SimpleUserRecordDTO updateUserPassword(UpdateUserPasswordDTO updateUserPasswordDTO) {
+
+        Optional<UserModel> optionalUserModel = userRepository.findById(updateUserPasswordDTO.getId());
+
+        if (optionalUserModel.isEmpty()) {
+            return null;
+        }
+
+        UserModel userModel = optionalUserModel.get();
+
+        UpdateUserPasswordUseCase useCase = new UpdateUserPasswordUseCase(userModel.getEmail(), updateUserPasswordDTO.getEmail(), userModel.getPassword(), updateUserPasswordDTO.getOldPassword());
+        useCase.validate();
+
+        userModel.setPassword(updateUserPasswordDTO.getNewPassword());
+
+        return UserConverter.toSimpleUserRecordDTO(userRepository.save(userModel));
 
     }
 
