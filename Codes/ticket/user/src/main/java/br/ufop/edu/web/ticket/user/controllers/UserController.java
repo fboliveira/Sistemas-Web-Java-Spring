@@ -1,43 +1,48 @@
 package br.ufop.edu.web.ticket.user.controllers;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.ufop.edu.web.ticket.user.dtos.CreateUserDTO;
+import br.ufop.edu.web.ticket.user.dtos.SimpleUserRecordDTO;
 import br.ufop.edu.web.ticket.user.service.UserService;
 import lombok.AllArgsConstructor;
 
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
-
-
 @RestController
-@RequestMapping("/users")
 @AllArgsConstructor
+@RequestMapping("/users")
 public class UserController {
-
-    private final UserService userService;
     
+       private final UserService userService;
+
     @GetMapping("/status")
     public ResponseEntity<String> getStatus() {
         return ResponseEntity.ok("Service is running");
     }
 
     @GetMapping
-    public String getUsers() {
-        return new String();
+    public ResponseEntity<List<SimpleUserRecordDTO>> getAllUsers() {
+
+        List<SimpleUserRecordDTO> list =
+            userService.getAllUsers();
+        return ResponseEntity.ok(list);
+
     }
 
     @PostMapping
-    public ResponseEntity createUser(@RequestBody String entity) {
+    public ResponseEntity<SimpleUserRecordDTO> 
+        createUser(@RequestBody 
+            CreateUserDTO createUserDTO) {
         
-        
-        return null;
-    }
-    
-    
+        SimpleUserRecordDTO simpleUserRecordDTO = userService.createUser(createUserDTO);
+        return ResponseEntity.ok(simpleUserRecordDTO);
+    }    
+
 
 }

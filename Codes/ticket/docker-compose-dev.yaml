@@ -1,0 +1,33 @@
+# version: '3' -> obsoleto
+services:
+  pgsql-ticket:
+    image: postgres:16-alpine
+    ports:
+      # HOST:CONTAINER
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=pgsql-ticket-master
+      - POSTGRES_PASSWORD=pgsql-ticket-password  
+    volumes:
+      - ./01-create-database-users.sql:/docker-entrypoint-initdb.d/01-create-database-users.sql
+      - ./02-create-database-sales.sql:/docker-entrypoint-initdb.d/02-create-database-sales.sql
+      - ./03-create-database-notification.sql:/docker-entrypoint-initdb.d/03-create-database-notification.sql
+
+    networks:
+      - backend 
+
+  pgadmin:
+    image: dpage/pgadmin4:9.3.0
+    ports:
+      - "8123:80"
+      - "8443:443"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=web@ufop.edu.br
+      - PGADMIN_DEFAULT_PASSWORD=123456
+
+    networks:
+      - backend
+
+networks:
+  frontend:
+  backend:
