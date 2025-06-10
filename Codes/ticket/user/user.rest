@@ -2,3 +2,21 @@ GET http://localhost:3000/users/status
 
 ###
 GET http://localhost:3000/users
+
+###
+GET http://localhost:3000/users/a3d0fee0-8a0c-4cbf-93c0-ed3d0057218f
+
+
+###
+GET http://localhost:3000/users/byname/fer
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name": "Maria Fernanda",
+    "creditCardNumber": "123456789",
+    "email": "mariafernanda@web.ufop.edu.br",
+    "password": "123456"
+}

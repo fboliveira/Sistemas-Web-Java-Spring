@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,7 +43,30 @@ public class UserController {
         
         SimpleUserRecordDTO simpleUserRecordDTO = userService.createUser(createUserDTO);
         return ResponseEntity.ok(simpleUserRecordDTO);
-    }    
+    }
+    
+    @GetMapping("/{userId}")
+    public ResponseEntity<SimpleUserRecordDTO>
+        getUserById(@PathVariable(value = "userId") String id) {
 
+            SimpleUserRecordDTO simpleUserRecordDTO =
+            userService.getUserById(id);
+
+            if (simpleUserRecordDTO == null) {
+                return ResponseEntity.notFound().build();
+            }
+
+            return ResponseEntity.ok(simpleUserRecordDTO);
+
+        }
+
+    @GetMapping("/byname/{name}")
+    public ResponseEntity<List<SimpleUserRecordDTO>> getByName(@PathVariable(value = "name") String userName) {
+
+        List<SimpleUserRecordDTO> list =
+            userService.getUsersByName(userName);
+        return ResponseEntity.ok(list);
+
+    }
 
 }
