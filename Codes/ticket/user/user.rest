@@ -43,3 +43,11 @@ Content-Type: application/json
     "newPassword": "654321"
 
 }
+
+###
+DELETE http://localhost:3000/users/remove
+Content-Type: application/json
+
+{
+    "id": "02c95281-bfa8-4859-93dc-1508ed511901"
+}

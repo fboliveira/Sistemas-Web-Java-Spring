@@ -12,6 +12,7 @@ import br.ufop.edu.web.ticket.user.domain.UserDomain;
 import br.ufop.edu.web.ticket.user.domain.usecase.CreateUserUseCase;
 import br.ufop.edu.web.ticket.user.domain.usecase.UpdateUserPasswordUseCase;
 import br.ufop.edu.web.ticket.user.dtos.CreateUserDTO;
+import br.ufop.edu.web.ticket.user.dtos.DeleteUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.SimpleUserRecordDTO;
 import br.ufop.edu.web.ticket.user.dtos.UpdateUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.UpdateUserPasswordDTO;
@@ -116,6 +117,20 @@ public class UserService {
         userModel.setPassword(updateUserPasswordDTO.getNewPassword());
 
         return UserConverter.toSimpleUserRecordDTO(userRepository.save(userModel));
+
+    }
+
+    public void deleteUser(DeleteUserDTO deleteUserDTO) {
+
+        Optional<UserModel> optionalUserModel = userRepository
+                .findById(deleteUserDTO.id());
+
+        // Use case: tickets associados ...
+        if (optionalUserModel.isEmpty()) {
+            throw new RuntimeException("User not found.");
+        }
+
+        userRepository.delete(optionalUserModel.get());
 
     }
 

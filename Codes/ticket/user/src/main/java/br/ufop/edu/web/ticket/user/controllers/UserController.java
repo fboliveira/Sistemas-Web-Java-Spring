@@ -3,6 +3,7 @@ package br.ufop.edu.web.ticket.user.controllers;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.ufop.edu.web.ticket.user.dtos.CreateUserDTO;
+import br.ufop.edu.web.ticket.user.dtos.DeleteUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.SimpleUserRecordDTO;
 import br.ufop.edu.web.ticket.user.dtos.UpdateUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.UpdateUserPasswordDTO;
@@ -97,6 +99,15 @@ public class UserController {
         return ResponseEntity.ok(simpleUserRecordDTO);
 
     }
+
+    @DeleteMapping("/remove")
+    public ResponseEntity<Object> deleteUser(@RequestBody DeleteUserDTO deleteUserDTO) {
+        
+        userService.deleteUser(deleteUserDTO);
+        return ResponseEntity.ok("User has been deleted.");
+
+    }
+
 
 
 }
