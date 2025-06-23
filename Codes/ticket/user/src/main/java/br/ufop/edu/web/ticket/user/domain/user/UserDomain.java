@@ -1,4 +1,4 @@
-package br.ufop.edu.web.ticket.user.domain;
+package br.ufop.edu.web.ticket.user.domain.user;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

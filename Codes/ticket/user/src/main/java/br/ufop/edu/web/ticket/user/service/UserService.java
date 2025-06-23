@@ -1,6 +1,5 @@
 package br.ufop.edu.web.ticket.user.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -8,9 +7,9 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import br.ufop.edu.web.ticket.user.converter.UserConverter;
-import br.ufop.edu.web.ticket.user.domain.UserDomain;
-import br.ufop.edu.web.ticket.user.domain.usecase.CreateUserUseCase;
-import br.ufop.edu.web.ticket.user.domain.usecase.UpdateUserPasswordUseCase;
+import br.ufop.edu.web.ticket.user.domain.user.UserDomain;
+import br.ufop.edu.web.ticket.user.domain.user.usecase.CreateUserUseCase;
+import br.ufop.edu.web.ticket.user.domain.user.usecase.UpdateUserPasswordUseCase;
 import br.ufop.edu.web.ticket.user.dtos.CreateUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.DeleteUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.SimpleUserRecordDTO;

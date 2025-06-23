@@ -1,4 +1,4 @@
-package br.ufop.edu.web.ticket.user.domain.usecase;
+package br.ufop.edu.web.ticket.user.domain.user.usecase;
 
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;

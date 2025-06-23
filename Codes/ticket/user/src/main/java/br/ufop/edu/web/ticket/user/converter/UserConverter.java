@@ -1,6 +1,6 @@
 package br.ufop.edu.web.ticket.user.converter;
 
-import br.ufop.edu.web.ticket.user.domain.UserDomain;
+import br.ufop.edu.web.ticket.user.domain.user.UserDomain;
 import br.ufop.edu.web.ticket.user.dtos.CreateUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.SimpleUserRecordDTO;
 import br.ufop.edu.web.ticket.user.dtos.UpdateUserDTO;
