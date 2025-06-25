@@ -28,6 +28,8 @@ public class UserDomain {
 
     private String city;
 
+    private CreditCardNetworkDomain creditCardNetworkDomain;
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 

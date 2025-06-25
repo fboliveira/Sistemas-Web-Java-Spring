@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
@@ -38,8 +40,12 @@ public class UserModel {
     private String email;
     private String password;
 
-    @Column(nullable = true)
+    @Column(nullable = true) // true - default; false - not null
     private String city;    
+
+    @ManyToOne
+    @JoinColumn(name = "credit_card_network_id")
+    private CreditCardNetworkModel creditCardNetworkModel;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
