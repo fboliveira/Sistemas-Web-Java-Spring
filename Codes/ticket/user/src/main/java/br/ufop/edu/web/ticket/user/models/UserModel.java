@@ -3,6 +3,7 @@ package br.ufop.edu.web.ticket.user.models;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.ufop.edu.web.ticket.user.enums.EnumUserType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -46,6 +47,8 @@ public class UserModel {
     @ManyToOne
     @JoinColumn(name = "credit_card_network_id")
     private CreditCardNetworkModel creditCardNetworkModel;
+
+    private EnumUserType userType;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
