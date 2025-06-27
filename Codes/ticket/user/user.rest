@@ -29,7 +29,7 @@ Content-Type: application/json
     "id": "02c95281-bfa8-4859-93dc-1508ed511901",
     "name": "Hugo Oliveira",
     "creditCardNumber": "987654321",
-    v
+
 }
 
 ###
