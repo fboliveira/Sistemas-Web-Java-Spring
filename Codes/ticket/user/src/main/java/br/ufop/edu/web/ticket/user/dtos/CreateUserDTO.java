@@ -1,5 +1,7 @@
 package br.ufop.edu.web.ticket.user.dtos;
 
+import java.util.UUID;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,6 +16,7 @@ public class CreateUserDTO {
     private String name;
 
     private String creditCardNumber;
+    private UUID creditCardNetwordId;
 
     private String email;
     private String password;

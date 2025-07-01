@@ -14,9 +14,12 @@ import br.ufop.edu.web.ticket.user.domain.usecase.UpdateUserPasswordUseCase;
 import br.ufop.edu.web.ticket.user.dtos.CreateUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.DeleteUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.SimpleUserRecordDTO;
+import br.ufop.edu.web.ticket.user.dtos.UpdateUserCreditCardDTO;
 import br.ufop.edu.web.ticket.user.dtos.UpdateUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.UpdateUserPasswordDTO;
+import br.ufop.edu.web.ticket.user.models.CreditCardNetworkModel;
 import br.ufop.edu.web.ticket.user.models.UserModel;
+import br.ufop.edu.web.ticket.user.repositories.ICreditCardNetworkRepository;
 import br.ufop.edu.web.ticket.user.repositories.IUserRepository;
 import lombok.AllArgsConstructor;
 
@@ -25,6 +28,7 @@ import lombok.AllArgsConstructor;
 public class UserService {
     
     private final IUserRepository userRepository;
+    private final ICreditCardNetworkRepository creditCardNetworkRepository;
 
     public List<SimpleUserRecordDTO> getAllUsers() {
 
@@ -131,6 +135,36 @@ public class UserService {
         }
 
         userRepository.delete(optionalUserModel.get());
+
+    }
+
+    public SimpleUserRecordDTO updateCreditCard(
+        UpdateUserCreditCardDTO updateUserCreditCardDTO
+    ) {
+
+        Optional<UserModel> optional = userRepository
+            .findById(updateUserCreditCardDTO.id());
+
+        if (optional.isEmpty()) {
+            return null;
+        }
+
+        Optional<CreditCardNetworkModel> optionalCCN =
+            creditCardNetworkRepository.findById(updateUserCreditCardDTO.creditCardNetwordId());
+
+        if (optionalCCN.isEmpty()) {
+            return null;
+        }
+
+        UserModel userModel = optional.get();
+        CreditCardNetworkModel creditCardNetworkModel = optionalCCN.get();
+
+        userModel.setCreditCardNumber(updateUserCreditCardDTO.creditCardNumber());
+        userModel.setCreditCardNetworkModel(creditCardNetworkModel);
+
+        return UserConverter.toSimpleUserRecordDTO(
+            userRepository.save(userModel)
+        );
 
     }
 
