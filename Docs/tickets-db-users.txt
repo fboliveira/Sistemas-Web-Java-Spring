@@ -1,0 +1,61 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+
+// ---- USERS
+
+Table credit_card_network {
+  id uuid [primary key]
+  name varchar
+}
+
+Table users {
+  id uuid [primary key]
+  name varchar
+  city varchar
+  creditCardNumber varchar
+
+  email varchar
+  password varchar
+
+  credit_card_network_id uuid
+
+  createdAt timestamp
+  updatedAt timestamp
+
+}
+
+Ref user_ccn: credit_card_network.id > users.credit_card_network_id
+
+/// ----- SALES
+
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table events {
+  id uuid [primary key]
+  description varchar
+  type integer [note: "Exemplos: palestra, show, teatro, curso, ..."]
+  date datetime
+  startSales datetime
+  endSales datetime
+  price float
+
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+Table sales {
+  id uuid [primary key]
+  user_id uuid
+  event_id uuid
+
+  purchaseDate datetime
+  purchaseStatus integer [note: "Em aberto, Pago, Cancelado, Estornado, ..."]
+
+  createdAt timestamp
+  updatedAt timestamp
+
+}
+
+Ref event_sales: events.id > sales.event_id_id
