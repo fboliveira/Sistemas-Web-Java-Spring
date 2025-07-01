@@ -9,6 +9,7 @@
 1. Definir, se necessário, os métodos no repositório.
 1. Definir o serviço (CRUD)
     - Estabelecer os DTOs de entrada e saída
-    - Definir os conversores: model -> entity; entiy -> dto, ...
+    - Definir os conversores: model -> entity; entity -> dto, ...
+    - Definir os serviços
 1. Definir o controller/endpoints - utiliza o serviço para enviar requisições (DTOs) e receber respostas (DTOs).
 1. Definir e escrever os testes unitários/integração.
