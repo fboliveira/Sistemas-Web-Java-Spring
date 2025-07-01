@@ -51,3 +51,15 @@ Content-Type: application/json
 {
     "id": "02c95281-bfa8-4859-93dc-1508ed511901"
 }
+
+###
+
+GET http://localhost:3000/ccn
+
+###
+POST http://localhost:3000/ccn
+Content-Type: application/json
+
+{
+    "name": "American Express"
+}
