@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 import lombok.AccessLevel;
+import br.ufop.edu.web.ticket.user.domain.CreditCardNetworkDomain;
 import br.ufop.edu.web.ticket.user.enums.EnumUserType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
