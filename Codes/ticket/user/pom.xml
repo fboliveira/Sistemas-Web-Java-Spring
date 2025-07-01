@@ -12,7 +12,7 @@
 	<groupId>br.ufop.edu.web.ticket</groupId>
 	<artifactId>user</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>User Service</name>
+	<name>users</name>
 	<description>User management</description>
 	<url />
 	<licenses>
@@ -29,6 +29,8 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
+		<!-- Eureka client -->
+		<spring-cloud.version>2025.0.0</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>
