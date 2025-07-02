@@ -48,10 +48,6 @@ public class UserModel {
     @Column(nullable = true) // true - default; false - not null
     private String city;    
 
-    @ManyToOne
-    @JoinColumn(name = "credit_card_network_id")
-    private CreditCardNetworkModel creditCardNetworkModel;
-
     private EnumUserType userType;
 
     private LocalDateTime createdAt;
