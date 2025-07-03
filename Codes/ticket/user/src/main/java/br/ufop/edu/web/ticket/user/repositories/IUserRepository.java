@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.ufop.edu.web.ticket.user.models.UserModel;
 import java.util.List;
+import java.util.Optional;
 
 
 public interface IUserRepository extends JpaRepository<UserModel, UUID> {
@@ -14,5 +15,7 @@ public interface IUserRepository extends JpaRepository<UserModel, UUID> {
     List<UserModel> findByCity(String city);
 
     List<UserModel> findAllByNameContainingIgnoreCase(String name);
+
+    Optional<UserModel> findByEmailAndPassword(String email, String password);
     
 }
