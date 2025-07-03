@@ -12,6 +12,7 @@ import br.ufop.edu.web.ticket.user.domain.user.usecase.CreateUserUseCase;
 import br.ufop.edu.web.ticket.user.domain.user.usecase.UpdateUserPasswordUseCase;
 import br.ufop.edu.web.ticket.user.dtos.CreateUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.DeleteUserDTO;
+import br.ufop.edu.web.ticket.user.dtos.LoginUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.SimpleUserRecordDTO;
 import br.ufop.edu.web.ticket.user.dtos.UpdateUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.UpdateUserPasswordDTO;
@@ -130,6 +131,18 @@ public class UserService {
         }
 
         userRepository.delete(optionalUserModel.get());
+
+    }
+
+    public SimpleUserRecordDTO login(LoginUserDTO loginUserDTO) {
+        
+        Optional<UserModel> userModelOpt = userRepository.findByEmailAndPassword(loginUserDTO.email().toLowerCase(), loginUserDTO.password());
+
+        if (userModelOpt.isEmpty()) {
+            throw new RuntimeException("Invalid credentials.");
+        }
+
+        return UserConverter.toSimpleUserRecordDTO(userModelOpt.get());
 
     }
 
