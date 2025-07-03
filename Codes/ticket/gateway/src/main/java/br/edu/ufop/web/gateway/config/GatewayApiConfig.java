@@ -20,10 +20,17 @@ public class GatewayApiConfig {
         return builder.routes()
                 .route("users",
                     p -> p.path("/api/users")
+                     .filters(f -> f.rewritePath("/api/users",
+                                                "/users"))
+                    .uri("http://localhost:3000"))
+                .route("users-segment",
+                    p -> p.path("/api/users/**")
+                     .filters(f -> f.rewritePath("/api/users/(?<segment>.*)",
+                                                "/users/${segment}"))
                     .uri("http://localhost:3000"))
                 .route("sales",
-                    p -> p.path("/api/users")
-                    .uri("http://localhost:4000"))
+                    p -> p.path("/sales/**")
+                    .uri("http://localhost:4000/sales"))
                 .route("frontend",
                     p -> p.path("/**")
                     .uri(this.uriServicoFrontEnd))
