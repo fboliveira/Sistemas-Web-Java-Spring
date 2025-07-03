@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.ufop.edu.web.ticket.user.dtos.CreateUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.DeleteUserDTO;
+import br.ufop.edu.web.ticket.user.dtos.LoginUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.SimpleUserRecordDTO;
 import br.ufop.edu.web.ticket.user.dtos.UpdateUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.UpdateUserPasswordDTO;
@@ -108,6 +109,16 @@ public class UserController {
 
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<SimpleUserRecordDTO> login(@RequestBody LoginUserDTO loginUserDTO) {
 
+        try {
+            SimpleUserRecordDTO simpleUserRecordDTO = userService.login(loginUserDTO);
+            return ResponseEntity.ok(simpleUserRecordDTO);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().build();
+        }
+
+    }
 
 }
