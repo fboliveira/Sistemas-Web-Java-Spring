@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.ufop.edu.web.ticket.user.dtos.CreateUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.DeleteUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.SimpleUserRecordDTO;
+import br.ufop.edu.web.ticket.user.dtos.UpdateUserCreditCardDTO;
 import br.ufop.edu.web.ticket.user.dtos.UpdateUserDTO;
 import br.ufop.edu.web.ticket.user.dtos.UpdateUserPasswordDTO;
 import br.ufop.edu.web.ticket.user.service.UserService;
@@ -105,6 +106,22 @@ public class UserController {
         
         userService.deleteUser(deleteUserDTO);
         return ResponseEntity.ok("User has been deleted.");
+
+    }
+
+    @PutMapping("/creditcard")
+    public ResponseEntity<SimpleUserRecordDTO> updateCreditCard(
+        @RequestBody UpdateUserCreditCardDTO updateUserCreditCardDTO
+    ) {
+
+        SimpleUserRecordDTO simpleUserRecordDTO = 
+            userService.updateCreditCard(updateUserCreditCardDTO);
+
+        if (simpleUserRecordDTO == null) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        return ResponseEntity.ok(simpleUserRecordDTO);
 
     }
 
