@@ -150,7 +150,7 @@ public class UserService {
         }
 
         Optional<CreditCardNetworkModel> optionalCCN =
-            creditCardNetworkRepository.findById(updateUserCreditCardDTO.creditCardNetwordId());
+            creditCardNetworkRepository.findById(updateUserCreditCardDTO.creditCardNetworkId());
 
         if (optionalCCN.isEmpty()) {
             return null;

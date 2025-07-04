@@ -6,7 +6,7 @@ public record UpdateUserCreditCardDTO(
 
     UUID id,
     String creditCardNumber,
-    UUID creditCardNetwordId
+    UUID creditCardNetworkId
 
 ) {
     
