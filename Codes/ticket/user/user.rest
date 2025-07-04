@@ -63,3 +63,14 @@ Content-Type: application/json
 {
     "name": "American Express"
 }
+
+###
+PUT http://localhost:3000/users/creditcard
+Content-Type: application/json
+
+{
+    "id": "d1f8e7b3-5cf0-41be-bf6f-fc9daea151f3",
+    "creditCardNumber": "789123456012",
+    "creditCardNetworkId": "4743f630-8525-461c-8f83-fea1152f0d41"
+
+}
