@@ -19,8 +19,8 @@ Table sales {
   user_id uuid
   event_id uuid
 
-  purchaseDate datetime
-  purchaseStatus integer [note: "Em aberto, Pago, Cancelado, Estornado, ..."]
+  saleDate datetime
+  saleStatus integer [note: "Em aberto, Pago, Cancelado, Estornado, ..."]
 
   createdAt timestamp
   updatedAt timestamp
