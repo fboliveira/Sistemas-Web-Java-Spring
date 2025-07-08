@@ -1,5 +1,7 @@
 package br.edu.ufop.web.ticket.sales.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import br.edu.ufop.web.ticket.sales.converter.EventConverter;
@@ -16,6 +18,10 @@ import lombok.AllArgsConstructor;
 public class EventService {
     
     private final IEventRepository eventRepository;
+
+    public List<EventDTO> getAll() {
+        return eventRepository.findAll().stream().map(EventConverter::toEventDTO).toList();
+    }
 
     public EventDTO create(CreateEventDTO createEventDTO) {
 
