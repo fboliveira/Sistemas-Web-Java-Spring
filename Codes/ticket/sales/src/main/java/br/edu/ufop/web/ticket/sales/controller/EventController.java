@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/events")
+@RequestMapping("/sales/events")
 @AllArgsConstructor
 public class EventController {
 
