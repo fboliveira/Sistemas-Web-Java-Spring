@@ -38,8 +38,7 @@ public class SaleModel {
     private UUID userId;
 
     @ManyToOne
-    @JoinColumn(name = "event_id")
-    @Column(nullable = false)
+    @JoinColumn(name = "event_id", nullable = false)
     private EventModel eventModel;
     
     @Column(nullable = false)
