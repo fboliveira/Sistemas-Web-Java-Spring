@@ -15,9 +15,9 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "name": "Hugo",
+    "name": "Ana",
     "creditCardNumber": "123456789",
-    "email": "hugo@web.ufop.edu.br",
+    "email": "Ana@web.ufop.edu.br",
     "password": "123456"
 }
 
