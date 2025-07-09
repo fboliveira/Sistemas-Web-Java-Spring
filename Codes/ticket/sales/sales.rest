@@ -16,3 +16,9 @@ Content-Type: application/json
     
     "price": 350.7
 }
+
+###
+GET http://localhost:8080/api/users
+
+###
+GET http://localhost:8080/sales/users
