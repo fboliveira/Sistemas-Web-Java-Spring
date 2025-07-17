@@ -15,7 +15,10 @@ const ListUsers = () => {
     
     useEffect(() => {
         api('/api/users')
-            .then(response => setUsers(response.data))
+            .then(response => {
+                // console.log(response)
+                setUsers(response)
+            })
     }, [])
 
     return (
@@ -30,7 +33,7 @@ const ListUsers = () => {
         <div>
             {
                 users.map(user => (
-                    <Card id={user.id} description={user.name} />
+                    <Card key={user.id} id={user.id} description={user.name} />
                 ))
             }
         </div>
