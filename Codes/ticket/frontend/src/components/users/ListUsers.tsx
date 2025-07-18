@@ -4,7 +4,7 @@ import api from "../../services/api"
 import Card from "../card/Card"
 
 interface UsersInterface {
-    id: number,
+    id: string,
     name: string,
     email: string
 }
