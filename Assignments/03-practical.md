@@ -8,9 +8,9 @@
 
 ## Atividade Prática 03 - Desafio Técnico: API de Gerenciamento de Carteira de Investimentos
 
-A proposta desta atividade prática é a implementação do seguinte desafio técnico utilizando Java/Spring Boot. Considere que uma fintech deseja lançar um app para usuários acompanharem suas **carteiras de investimentos**. A ideia é centralizar a visualização e o gerenciamento de diferentes tipos de ativos: **ações, criptomoedas, fundos de investimento, renda fixa e outros**.
+A proposta desta atividade prática é a implementação do seguinte desafio técnico utilizando **Java/Spring Boot**. Considere que uma *fintech* deseja lançar um app para usuários acompanharem suas **carteiras de investimentos**. A ideia é centralizar a visualização e o gerenciamento de diferentes tipos de ativos: **ações, criptomoedas, fundos de investimento, renda fixa e outros**.
 
-O objetivo do desafio é criar uma *API RESTful* que permita aos usuários cadastrarem ativos que possuem, atualizarem informações, acompanharem saldos e obterem um resumo da carteira.
+O objetivo do desafio é criar uma **API RESTful** que permita aos usuários cadastrarem ativos que possuem, atualizarem informações, acompanharem saldos e obterem um resumo da carteira.
 
 ### Requisitos Funcionais
 
@@ -87,8 +87,10 @@ Seguem alguns exemplos. Você pode incluir outros tipos também. A sugestão é 
 
 ### Diferenciais (opcionais)
 
-* API para **atualizar valores de mercado** simulados (ex: via PATCH ou API externa mockada)
+* API para **atualizar valores de mercado** simulados (exemplos: via PATCH ou API externa)
 * Cálculo de lucro/prejuízo por ativo
+* Arquivo .rest, Insomnia ou equivalente com a utilização dos endpoints.
+* Implementação da interface Web com React.js (*pontuação extra*).
 
 ---
 
