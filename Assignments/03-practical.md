@@ -81,7 +81,7 @@ Seguem alguns exemplos. Você pode incluir outros tipos também. A sugestão é 
 * Java 17+ com Spring Boot 3.x
 * Spring Data JPA com banco relacional: PostgreSQL ou MySQL (a sugestão que você utilize um container Docker para o banco)
 * Uso de DTOs para entrada e saída
-* Separação definida das camadas: Controller, Service, Repository, Model
+* Separação definida das camadas: *Controller, Service, Repository, Model* (ou outra arquitetura que você preferir)
 
 ---
 
@@ -92,39 +92,59 @@ Seguem alguns exemplos. Você pode incluir outros tipos também. A sugestão é 
 
 ---
 
-### Entrega Esperada
+### Entregas
 
-* Repositório no GitHub com:
+A entrega dos códigos deverá ser feito num repositório no GitHub, bem como o documento README com as instruções e critérios utilizados na implementação. O *link* com a apresentação deverá ser postado no Moodle. Fica ao seu critério incluir ou não o *link* da apresentação no GitHub.
+
+* **Repositório no GitHub com:**
 
   * Código-fonte
-  * README com instruções para rodar localmente
+  * README com instruções para rodar localmente e especificação dos critérios utilizados
   * (Opcional) scripts para popular a base
 
----
-
-### O que será avaliado
-
-* Clareza e legibilidade do código
-* Organização das camadas e uso correto de recursos do Spring
-* Implementação das regras de negócio
-* Simplicidade, mas com atenção aos detalhes
-
-### Entrega
-
-O código deve ser disponibilizado num repositório no Github e o link desse repositório deve ser inserido no Moodle no tópico correspondente à atividade.
+* **Moodle**: o *link* do vídeo publicado em alguma plataforma (YouTube, Vimeo, Google Meet/Drive, dentre outros).
 
 ---
 
-**Uma excelente atividade para vocês!**
+### Critérios e pontuação
+
+A apresentação do trabalho será realizada a partir da **gravação de um vídeo** contendo a descrição do projeto e a implementação. Os critérios estabelecidos a seguir serão utilizados para a avaliação do trabalho. As notas também serão compostas pela avaliação da turma (avaliação pelos pares).
+
+O que será avaliado:
+
+* Clareza e legibilidade do código.
+* Organização das camadas e uso correto de recursos do Spring.
+* Implementação das regras de negócio.
+* Simplicidade, mas com atenção aos detalhes.
+
+O **limite de tempo para o vídeo é entre 10 a 15 minutos**. A **nota final** é composta pela avaliações pelos pares e pela minha avaliação.
+
+Como o Moodle tem restrição do tamanho de arquivos, eu sugiro que vocês postem os vídeos no *YouTube* (ou plataforma similar). Assim, vocês podem enviar apenas o *link* da apresentação produzida.
 
 ---
 
-***Let's code!***
+### Avaliação pelos pares
 
-![Let's code!](https://media.giphy.com/media/USV0ym3bVWQJJmNu3N/giphy.gif)
+Na avaliação pelos pares, você fará a pontuação dos itens em formulário disponibilizado no *Google Forms* conforme os critérios indicados (os *links* estarão no Moodle). A coleta de e-mails será realizada apenas para fins de controle da pontuação individual.
 
-![Happy coding](https://media.giphy.com/media/3bu85lsWhBTlWcOMN6/giphy.gif)
+É importante que você avalie todos os outros trabalhos. A participação na avaliação pelos pares das apresentações valem **10,0 pontos** (individual e atribuídos à pessoa que avaliou).
 
-> ***What we have to learn to do, we learn by doing.***  
+---
+
+### Cronograma
+
+O crograma a seguir é uma **recomendação**. É importante que as atividades sejam realizadas no prazo correto porque elas impactam tanto nas notas das outras pessoas, por causa da avaliação pelos pares, quanto na finalização das notas da disciplina.
+
+* **Semana 16**: finalização dos trabalhos e divulgação dos materiais produzidos pela turma.
+* **Semana 17**: avaliações por pares (preferencialmente, até **a data da última aula prevista no plano de ensino**).
+
+---
+
+> *"Nothing in life is to be feared, it is only to be understood.*  
+> *Now is the time to understand more, so that we may fear less."*
 >
-> --- Aristóteles.
+> --- **Marie Skłodowska Curie** (1867 - 1934). :heart_eyes:  
+> *Polish-French physcist and chemist.*
+> *The first woman to win a Nobel Prize.*
+> *The first person and the only woman to win the Nobel Prize twice.*  
+> *The only person to win the Nobel Prize in two scientific fields.*
