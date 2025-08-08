@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class NotificationConverter {
 
-    public static NotificationModel toNotificationModel(CreateNotificationDTO createNotificationDTO) {
+    public static NotificationDomain toNotificationDomain(CreateNotificationDTO createNotificationDTO) {
 
-        return NotificationModel.builder()
+        return NotificationDomain.builder()
                 .userId(createNotificationDTO.userId())
                 .service(createNotificationDTO.service())
                 .notificationType(createNotificationDTO.notificationType())
