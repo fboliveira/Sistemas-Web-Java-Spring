@@ -1,0 +1,10 @@
+POST http://localhost:8080/notifications
+Content-Type: application/json
+
+{
+    "userId": "d1f8e7b3-5cf0-41be-bf6f-fc9daea151f3",
+    "service": "notifications-service",
+    "notificationType": 0,
+    "subject": "Segundo Teste de gravação de mensagem",
+    "content": "Segunda mensagem enviado ao serviço de notificação para teste de gravação."
+}
