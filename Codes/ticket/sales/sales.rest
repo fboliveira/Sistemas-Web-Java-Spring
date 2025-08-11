@@ -1,0 +1,31 @@
+GET http://localhost:8080/sales/events
+
+###
+GET http://localhost:8080/sales/users
+
+###
+POST http://localhost:8080/sales/events
+Content-Type: application/json
+
+{
+    "description": "Curso de Spring Boot",    
+    "date": "2025-08-30T13:30:00",
+    
+    "startSales": "2025-08-01T22:00:00",
+    "endSales": "2025-08-29T23:59:59",
+    
+    "price": 350.7
+}
+
+###
+
+POST http://localhost:8080/sales
+Content-Type: application/json
+
+{
+    "userId": "f5d3cd23-5966-4193-81a8-fd84f137a769",
+    "eventId": "ff56e53a-0e48-4bf4-b30c-6214d31730c9"
+}
+
+###
+GET http://localhost:8080/sales
