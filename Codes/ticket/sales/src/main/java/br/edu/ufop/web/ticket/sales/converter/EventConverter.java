@@ -1,10 +1,5 @@
 package br.edu.ufop.web.ticket.sales.converter;
 
-import java.time.LocalDateTime;
-import java.util.UUID;
-
-import org.yaml.snakeyaml.events.Event;
-
 import br.edu.ufop.web.ticket.sales.domain.EventDomain;
 import br.edu.ufop.web.ticket.sales.dtos.events.CreateEventDTO;
 import br.edu.ufop.web.ticket.sales.dtos.events.EventDTO;
