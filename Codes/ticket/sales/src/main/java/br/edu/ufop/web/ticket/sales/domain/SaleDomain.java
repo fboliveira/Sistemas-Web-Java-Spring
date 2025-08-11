@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 import br.edu.ufop.web.ticket.sales.enums.EnumSaleStatusType;
-import br.edu.ufop.web.ticket.sales.model.EventModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,7 +21,7 @@ public class SaleDomain {
 
     private UUID userId;
 
-    private EventModel eventModel;
+    private EventDomain eventDomain;
     
     private LocalDateTime saleDate;
     
