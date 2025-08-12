@@ -1,5 +1,7 @@
 package br.edu.ufop.web.notifications.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import br.edu.ufop.web.notifications.converter.NotificationConverter;
@@ -15,6 +17,12 @@ import lombok.AllArgsConstructor;
 public class NotificationService {
     
     private final INotificationRepository notificationRepository;
+
+    public List<NotificationDTO> getAll() {
+        return notificationRepository.findAll()
+                .stream().map(NotificationConverter::toNotificationDTO)
+                .toList();
+    }
 
     public NotificationDTO create(CreateNotificationDTO createNotificationDTO) {
 
