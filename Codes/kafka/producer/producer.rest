@@ -4,3 +4,7 @@ Content-Type: application/json
 {
     "message": "Hello, world! 6"
 }
+
+###
+
+GET http://localhost:1234/api/sales/notify/group?id=1000
