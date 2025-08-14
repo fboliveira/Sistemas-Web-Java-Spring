@@ -2,7 +2,7 @@ POST http://localhost:1234/api/sales/notify
 Content-Type: application/json
 
 {
-    "message": "Hello, world! 6"
+    "message": "Hello, world!"
 }
 
 ###
