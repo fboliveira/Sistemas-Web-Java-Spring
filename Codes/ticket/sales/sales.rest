@@ -23,7 +23,7 @@ POST http://localhost:8080/sales
 Content-Type: application/json
 
 {
-    "userId": "f5d3cd23-5966-4193-81a8-fd84f137a769",
+    "userId": "412aea29-305f-4a9a-831b-4b79335d1135",
     "eventId": "ff56e53a-0e48-4bf4-b30c-6214d31730c9"
 }
 
