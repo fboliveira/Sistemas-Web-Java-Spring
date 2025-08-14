@@ -1,0 +1,10 @@
+POST http://localhost:1234/api/sales/notify
+Content-Type: application/json
+
+{
+    "message": "Hello, world!"
+}
+
+###
+
+GET http://localhost:1234/api/sales/notify/group?id=1000
