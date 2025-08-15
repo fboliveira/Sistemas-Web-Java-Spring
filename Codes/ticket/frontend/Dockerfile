@@ -19,4 +19,4 @@ COPY . .
 EXPOSE 5173
  
 # Define the command to run your app
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
