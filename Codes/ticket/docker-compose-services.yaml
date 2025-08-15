@@ -44,7 +44,7 @@ services:
     ports:
       - "5173:5173"
     networks:
-      - backend 
+      - frontend 
 
 networks:
   frontend:
