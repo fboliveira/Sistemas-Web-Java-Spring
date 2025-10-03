@@ -8,7 +8,7 @@
 
 ---
 
-Here are available lecture notes and codes on CSI607 - Sistemas Web II course at [Universidade Federal de Ouro Preto (UFOP)](http://www.ufop.br). Semester 2025/1.
+Here are available lecture notes and codes on CSI607 - Sistemas Web II course at [Universidade Federal de Ouro Preto (UFOP)](http://www.ufop.br). Semester 2025/2.
 
 Proposed content for this semester:
 

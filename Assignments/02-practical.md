@@ -1,6 +1,6 @@
 # CSI607 - Sistemas WEB II
 
-## Período Letivo 2025/1
+## Período Letivo 2025/2
 
 ### Prof. Fernando Bernardes de Oliveira, Ph.D
 
