@@ -1,0 +1,20 @@
+# version: '3' -> obsoleto
+services:
+
+  pgsql-ticket:
+
+    image: postgres:17.6
+    ports:
+      #HOST:CONTAINER
+      - "9876:5432"
+    
+    environment:
+      - POSTGRES_PASSWORD=pgsql-ticket-password
+      - POSTGRES_USER=pgsql-ticket-master
+
+    networks:
+      - backend
+
+networks:
+  frontend:
+  backend:
