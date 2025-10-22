@@ -25,9 +25,10 @@ public class UserDomain {
 
     private String creditCardNumber;
     // -- Network
+    private CCNetworkDomain ccNetwork;
 
     // - User type
-    EnumUserType type;
+    private EnumUserType type;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
