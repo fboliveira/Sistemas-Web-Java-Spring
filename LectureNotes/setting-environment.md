@@ -14,7 +14,7 @@ Nós precisaremos das seguintes ferramentas para o desenvolvimento:
 
 ## Sistema operacional
 
-Você pode optar em utilizar o [(~~R~~)Windows](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExczk2cmJ1ZHR0djRhbXY0c2RmODU1Z2hmMWF5Y3RqZDlva2liZ2tjeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QSMBLRAHZTLkQ/giphy.gif) ou qualquer outro sistema operacional (~~que realmente preste~~). Eu sugiro que você avalie a possibilidade de utilizar alguma distribuição Linux para desenvolvimento, principalmente Web. [Escolha uma distribuição qualquer](https://distrowatch.com/) e prepare o seu ambiente.  
+Você pode optar em utilizar o [(~~R~~)Windows](https://media3.giphy.com/media/QSMBLRAHZTLkQ/giphy.gif) ou qualquer outro sistema operacional (~~que realmente preste~~). Eu sugiro que você avalie a possibilidade de utilizar alguma distribuição Linux para desenvolvimento, principalmente Web. [Escolha uma distribuição qualquer](https://distrowatch.com/) e prepare o seu ambiente.  
 
 Segue uma sugestão de vídeo para ajudar na configuração do Ubuntu: [Fabio Akita - O Guia DEFINITIVO de UBUNTU para Devs Iniciantes](https://youtu.be/epiyExCyb2s). Em outros canais do [YouTube](https://www.youtube.com/), você encontrará também diversos tutoriais para diferentes distribuições.
 
