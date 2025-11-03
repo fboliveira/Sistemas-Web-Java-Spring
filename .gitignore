@@ -51,3 +51,5 @@ buildNumber.properties
 *.iml
 *.ipr
 *.iws
+
+pg_data/
