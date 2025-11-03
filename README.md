@@ -28,6 +28,7 @@ Proposed content for this semester:
 1. [Spring Framework](./LectureNotes/spring-framework.md)
 1. [Spring Boot](./LectureNotes/spring-boot.md)
 1. [Spring JPA](./LectureNotes/spring-jpa.md)
+1. [Database model](./Docs/tickets-db-full.png)
 1. [Architecture](./LectureNotes/architecture.md)
 1. [Spring Microservices](./LectureNotes/spring-microservices.md)
 1. [Messaging Systems](./LectureNotes/messaging-system.md)
