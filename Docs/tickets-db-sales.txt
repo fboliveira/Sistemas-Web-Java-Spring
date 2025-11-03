@@ -27,4 +27,4 @@ Table sales {
 
 }
 
-Ref event_sales: events.id > sales.event_id_id
+Ref event_sales: events.id > sales.event_id
