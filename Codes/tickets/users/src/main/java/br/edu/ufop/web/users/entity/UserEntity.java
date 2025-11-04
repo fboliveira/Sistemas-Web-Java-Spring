@@ -10,7 +10,6 @@ import java.util.UUID;
 @Entity
 @Table(name = "tb_users")
 
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -35,7 +34,9 @@ public class UserEntity {
     private String creditCardNumber;
 
     // -- Credit card network
-
+    @ManyToOne
+    @JoinColumn(name = "credit_card_network_id")
+    private CCNetworkEntity ccNetwork;
 
     private EnumUserType type;
 
