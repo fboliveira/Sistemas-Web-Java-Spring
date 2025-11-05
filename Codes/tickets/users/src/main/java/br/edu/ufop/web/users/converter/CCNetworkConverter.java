@@ -26,7 +26,7 @@ public class CCNetworkConverter {
     }
 
     // Entidade JPA para DTO de saída
-    public CreditCardNetworkDTO toDto(CCNetworkEntity ccNetworkEntity) {
+    public static CreditCardNetworkDTO toDto(CCNetworkEntity ccNetworkEntity) {
         return new CreditCardNetworkDTO(
                 ccNetworkEntity.getId(),
                 ccNetworkEntity.getName()
