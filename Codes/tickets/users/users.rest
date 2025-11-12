@@ -1,0 +1,32 @@
+###
+@urlServer = http://localhost:3000
+
+###
+GET {{urlServer}}/users/status
+###
+
+GET {{urlServer}}/ccn
+
+###
+POST {{urlServer}}/ccn
+Content-Type: application/json
+
+{
+  "name": ""
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
