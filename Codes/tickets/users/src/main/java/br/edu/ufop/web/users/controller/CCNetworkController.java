@@ -1,12 +1,11 @@
 package br.edu.ufop.web.users.controller;
 
+import br.edu.ufop.web.users.dto.CreateCreditCardNetworkDTO;
 import br.edu.ufop.web.users.dto.CreditCardNetworkDTO;
 import br.edu.ufop.web.users.service.CCNetworkService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +20,20 @@ public class CCNetworkController {
     public ResponseEntity<List<CreditCardNetworkDTO>> getAll() {
 
         return ResponseEntity.ok(service.getAll());
+
+    }
+
+    @PostMapping
+    public ResponseEntity<CreditCardNetworkDTO>
+        create(@RequestBody CreateCreditCardNetworkDTO dto) {
+
+        CreditCardNetworkDTO dtoRetorno = service.create(dto);
+
+        if (dtoRetorno == null) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        return ResponseEntity.ok(dtoRetorno);
 
     }
 
