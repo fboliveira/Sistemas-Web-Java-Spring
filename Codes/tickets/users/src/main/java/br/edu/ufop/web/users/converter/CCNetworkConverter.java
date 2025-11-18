@@ -33,6 +33,13 @@ public class CCNetworkConverter {
         );
     }
 
+    // Da Entidade JPA para o Domínio
+    public static CCNetworkDomain toDomain(CCNetworkEntity ccNetworkEntity) {
+        return CCNetworkDomain.builder()
+                .id(ccNetworkEntity.getId())
+                .name(ccNetworkEntity.getName())
+                .build();
+    }
 
 
 
