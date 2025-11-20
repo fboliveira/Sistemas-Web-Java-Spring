@@ -15,6 +15,18 @@ Content-Type: application/json
   "name": ""
 }
 
+###
+GET {{urlServer}}/users
+
+###
+POST {{urlServer}}/users
+Content-Type: application/json
+
+{
+  "name": "Fernando",
+  "creditCardNetworkId": "6c258cf8-dc27-4451-8208-0a47192719cc"
+}
+
 
 
 
