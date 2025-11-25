@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -42,6 +44,19 @@ public class UserService {
         );
 
         return UserConverter.toUserDTO(entity);
+
+    }
+
+    public Optional<UserDTO> getById(UUID id) {
+        Optional<UserEntity> userEntityOptional = repository.findById(id);
+
+        if (userEntityOptional.isEmpty()){
+            return Optional.empty();
+        }
+
+        UserDTO userDTO = UserConverter.toUserDTO(userEntityOptional.get());
+        return Optional.of(userDTO);
+
 
     }
 
