@@ -12,7 +12,7 @@ POST {{urlServer}}/ccn
 Content-Type: application/json
 
 {
-  "name": ""
+  "name": "Master"
 }
 
 ###
@@ -24,8 +24,13 @@ Content-Type: application/json
 
 {
   "name": "Fernando",
-  "creditCardNetworkId": "6c258cf8-dc27-4451-8208-0a47192719cc"
+  "creditCardNetworkId": "5dd30405-e5cc-42f6-8c2f-35aa70e55ce3",
+  "email": "fernando@web.ufop.edu.br",
+  "password": "123456"
 }
+
+###
+GET {{urlServer}}/users/961ba1a5-98e4-46a8-bc31-e463bb8b5cbe
 
 
 
