@@ -23,15 +23,35 @@ POST {{urlServer}}/users
 Content-Type: application/json
 
 {
-  "name": "Fernando",
+  "name": "Maria Fernanda",
   "creditCardNetworkId": "5dd30405-e5cc-42f6-8c2f-35aa70e55ce3",
-  "email": "fernando@web.ufop.edu.br",
+  "email": "mariafernanda@web.ufop.edu.br",
   "password": "123456"
 }
 
 ###
 GET {{urlServer}}/users/961ba1a5-98e4-46a8-bc31-e463bb8b5cbe
 
+###
+GET {{urlServer}}/users/name/ana
+
+###
+PUT {{urlServer}}/users
+Content-Type: application/json
+
+{
+  "id": "a39ba15d-9778-4ae2-a781-811bd7ff04c8",
+  "name": "Maria Tereza",
+  "city": "Itabira"
+}
+###
+DELETE {{urlServer}}/users
+Content-Type: application/json
+
+{
+  "id": "fa0c3571-2af1-4690-b52d-a4e72551e8e2",
+  "password": "123456"
+}
 
 
 
