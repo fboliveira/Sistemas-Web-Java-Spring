@@ -1,0 +1,31 @@
+###
+@urlServer = http://localhost:4000
+
+###
+GET {{urlServer}}/events
+
+###
+POST {{urlServer}}/events
+Content-Type: application/json
+
+{
+  "description": "Curso Spring Boot",
+  "type": 4,
+  "dateTime": "2025-12-19T18:00:00",
+  "startingSales": "2025-12-10T18:00:00",
+  "endingSales": "2025-12-18T23:59:59",
+  "price": 1000
+}
+
+###
+GET {{urlServer}}/sales
+
+###
+POST {{urlServer}}/sales
+Content-Type: application/json
+
+{
+  "eventId": "9c099fa2-ef7e-4113-8e83-d6635e3d6c5f",
+  "userId": "961ba1a5-98e4-46a8-bc31-e463bb8b5cbe"
+}
+
