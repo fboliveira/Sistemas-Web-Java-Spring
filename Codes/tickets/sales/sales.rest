@@ -25,7 +25,7 @@ POST {{urlServer}}/sales
 Content-Type: application/json
 
 {
-  "eventId": "9c099fa2-ef7e-4113-8e83-d6635e3d6c5f",
-  "userId": "961ba1a5-98e4-46a8-bc31-e463bb8b5cbe"
+  "eventId": "12c55b76-25f0-49ef-b3e1-2df16cf78855",
+  "userId": "92ff4138-3ae5-4282-a918-46a663c17629"
 }
 
