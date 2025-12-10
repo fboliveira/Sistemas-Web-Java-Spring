@@ -14,7 +14,7 @@ import java.util.UUID;
 public class SaleDTO {
 
     private UUID id;
-    private UUID user_id;
+    private UUID userId;
 
     private EventDTO event;
 
