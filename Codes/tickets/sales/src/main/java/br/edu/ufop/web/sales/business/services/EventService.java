@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -32,6 +34,10 @@ public class EventService {
         eventEntity = eventRepository.save(eventEntity);
         return EventConverter.toDTO(eventEntity);
 
+    }
+
+    public Optional<EventEntity> getById(UUID id) {
+        return eventRepository.findById(id);
     }
 
 }
