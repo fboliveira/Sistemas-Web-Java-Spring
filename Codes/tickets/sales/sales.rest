@@ -9,12 +9,12 @@ POST {{urlServer}}/events
 Content-Type: application/json
 
 {
-  "description": "Curso Spring Boot",
+  "description": "Curso Spring JPA",
   "type": 4,
-  "dateTime": "2025-12-19T18:00:00",
-  "startingSales": "2025-12-10T18:00:00",
-  "endingSales": "2025-12-18T23:59:59",
-  "price": 1000
+  "dateTime": "2025-12-20T18:00:00",
+  "startingSales": "2025-12-10T20:00:00",
+  "endingSales": "2025-12-19T23:59:59",
+  "price": 1500
 }
 
 ###
@@ -25,7 +25,7 @@ POST {{urlServer}}/sales
 Content-Type: application/json
 
 {
-  "eventId": "12c55b76-25f0-49ef-b3e1-2df16cf78855",
+  "eventId": "ce37de40-de60-4835-b77b-e6370bc784b7",
   "userId": "92ff4138-3ae5-4282-a918-46a663c17629"
 }
 
