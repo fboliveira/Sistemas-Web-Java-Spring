@@ -21,7 +21,7 @@ public class SaleEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    private UUID user_id;
+    private UUID userId;
 
     @ManyToOne
     @JoinColumn(name = "event_id")
@@ -36,6 +36,8 @@ public class SaleEntity {
 
     @PrePersist
     public void beforeSave() {
+        this.status = EnumSaleStatus.EM_ABERTO;
+        this.dateTime = LocalDateTime.now();
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
     }
