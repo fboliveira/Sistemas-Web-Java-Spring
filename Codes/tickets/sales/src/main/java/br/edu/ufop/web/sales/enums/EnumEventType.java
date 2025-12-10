@@ -16,4 +16,16 @@ public enum EnumEventType {
     private Integer id;
     private String description;
 
+    public static EnumEventType getById(Integer id) {
+
+        for(EnumEventType type : EnumEventType.values()) {
+            if (type.getId().equals(id)) {
+                return type;
+            }
+        }
+
+        return null;
+
+    }
+
 }
