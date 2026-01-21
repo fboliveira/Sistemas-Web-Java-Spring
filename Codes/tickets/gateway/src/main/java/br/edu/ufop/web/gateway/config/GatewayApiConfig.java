@@ -1,5 +1,6 @@
 package br.edu.ufop.web.gateway.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
@@ -8,11 +9,19 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class GatewayApiConfig {
 
-    private String frontEndUri = "http://localhost:5173";
+    @Value("${gateway.frontend.uri}")
+    private String frontEndUri;
 
     @Bean
     public RouteLocator gatewayRouter(RouteLocatorBuilder builder) {
         return builder.routes()
+                .route("users-api", pred ->
+                                pred.path("/api/users/**")
+                                        .filters(f -> f.rewritePath("/api/users", "/users"))
+                                        .uri("lb://users-service")
+
+                )
+
                 .route("users",
                         pred ->
                                 pred.path("/users/**")
@@ -26,10 +35,22 @@ public class GatewayApiConfig {
 
                 .route("frontend",
                         pred -> pred.path("/**")
-                                .uri(this.frontEndUri)
+                                .uri(getFrontEndUri())
                 )
 
                 .build();
+    }
+
+    private String getFrontEndUri() {
+
+        final String FRONTEND_DEFAULT_URI = "http://localhost:1234";
+
+        if (this.frontEndUri != null) {
+            return this.frontEndUri;
+        }
+
+        return FRONTEND_DEFAULT_URI;
+
     }
 
 
