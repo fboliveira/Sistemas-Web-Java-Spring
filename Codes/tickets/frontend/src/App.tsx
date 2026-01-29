@@ -1,4 +1,5 @@
 import { Button } from "./components/ui/button"
+import ListUsers from "./pages/users/ListUsers"
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
 
       <Button>Login</Button>
 
+      <ListUsers />
 
 
     </>
